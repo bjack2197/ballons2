@@ -1,0 +1,8 @@
+@mixin box-shadow($time)
+    box-shadow: (0 .4rem .4rem rgba(0, 0, 0, $time))
+
+@mixin clearfix
+    &::after
+        content: ""
+        display: table
+        clear: both

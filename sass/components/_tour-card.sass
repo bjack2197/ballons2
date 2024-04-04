@@ -1,0 +1,88 @@
+.card-tour
+    height: 50rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    &__side
+        height: 50rem
+        transition: 1s all ease-out
+        color: $color-white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        border-radius: .5rem
+        overflow: hidden
+        @include box-shadow(.5)
+        &_front
+        &_back
+            background: green
+            transform: rotateY(180deg)
+            background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
+
+    &:hover &__side_front
+        transform: rotateY(180deg)
+    &:hover &__side_back
+        transform: rotateY(360deg)
+    
+    &__img
+        background-blend-mode: hard-light
+        height: 21rem
+        background: $color-brown-light url(../assets/img/card-1.jpg) center/cover no-repeat
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        &_1
+            background: $color-brown-light url(../assets/img/card-1.jpg) center/cover no-repeat
+        &_2
+            background: $color-brown-light url(../assets/img/card-2.jpg) center/cover no-repeat
+        &_3
+            background: $color-brown-light url(../assets/img/card-3.jpg) center/cover no-repeat
+    &__title
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        font-weight: 300
+        text-transform: uppercase
+        text-align: right
+        position: absolute
+        top: 15.5rem
+        right: 0
+    &__span
+        background: linear-gradient(90deg, $color-brown-light, $color-brown-dark)
+        padding: 1rem 2rem .3rem 2rem
+        &_1
+            
+        &_2
+            position: absolute
+            top: 3.4rem
+            right: 0
+            padding-bottom: 1rem
+            padding-top: .3rem
+    &__descr
+        ul
+            li
+                font-size: 1.6rem
+                letter-spacing: .2rem
+                color: $color-gray
+                text-decoration: underline
+                text-underline-offset: 5px
+                text-align: center
+                &:not(:last-child)
+                    margin-bottom: 2rem
+                    
+    &__backSide-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &__text
+        margin-bottom: 8rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        color: $color-white
+        &_1
+            font-size: 1.6rem
+            font-weight: 300
+        &_2
+            font-size: 6rem
+            font-weight: 500
